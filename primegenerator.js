@@ -39,23 +39,25 @@ function checkprime(value) {
     var testNumSqurt = Math.sqrt(value);
     var done = false;
     var prime = false;
+    var mersenne = false;
     var df = 1;
     for (df = 1; done === false && Number(primes[df]) < value; df = df + 1) {
-        if(primes.indexOf(Math.log2(df + 1)) != -1){
-            //if evenly divisible
-            if (value / Number(primes[df]) % 1 != 0) {
-                prime = true;
-                done = false;
-            }
-            //if not evenly divisible
-            else {
-                prime = false;
-                done = true;
-            }
+        //if evenly divisible
+        if (value / Number(primes[df]) % 1 != 0) {
+            prime = true;
+            done = false;
+        }
+        //if not evenly divisible
+        else {
+            prime = false;
+            done = true;
         }
     }
     if (prime === true) {
         addtolist(value);
+        if (primes.indexOf(Math.log2(df + 1)) != -1) {
+            mersenne = true;
+        }
     }
 }
 
