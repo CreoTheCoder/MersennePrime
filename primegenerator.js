@@ -9,7 +9,6 @@ if (localStorage.primes == undefined) {
     var num = 3;
     var primecount = 0;
     var primes = ["filler"];
-    addtolist(2);
     addtolist(3);
 }
 else {
@@ -42,17 +41,17 @@ function checkprime(value) {
     var prime = false;
     var df = 1;
     for (df = 1; done === false && Number(primes[df]) < value; df = df + 1) {
-
-        //if evenly divisible
-        if (value / Number(primes[df]) % 1 != 0) {
-            prime = true;
-            done = false;
-            
-        }
-        //if not evenly divisible
-        else {
-            prime = false;
-            done = true;
+        if(primes.indexOf(log2(df + 1)) != -1){
+            //if evenly divisible
+            if (value / Number(primes[df]) % 1 != 0) {
+                prime = true;
+                done = false;
+            }
+            //if not evenly divisible
+            else {
+                prime = false;
+                done = true;
+            }
         }
     }
     if (prime === true) {
