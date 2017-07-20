@@ -41,7 +41,7 @@ function checkprime(value) {
     var prime = false;
     var df = 1;
     for (df = 1; done === false && Number(primes[df]) < value; df = df + 1) {
-        if(primes.indexOf(log2(df + 1)) != -1){
+        if(primes.indexOf(Math.log2(df + 1)) != -1){
             //if evenly divisible
             if (value / Number(primes[df]) % 1 != 0) {
                 prime = true;
