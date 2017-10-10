@@ -44,6 +44,9 @@ function checkprime(value) {
     for (df = 1; done === false && Number(primes[df]) < value; df = df + 1) {
         //if evenly divisible
         if (value / Number(primes[df]) % 1 != 0) {
+            if (primes.indexOf(Math.log2(df + 1)) != -1) {
+                mersenne = true;
+            }
             prime = true;
             done = false;
         }
@@ -55,9 +58,6 @@ function checkprime(value) {
     }
     if (mersenne === true) {
         addtolist(value);
-        if (primes.indexOf(Math.log2(df + 1)) != -1) {
-            mersenne = true;
-        }
     }
 }
 
