@@ -53,7 +53,7 @@ function checkprime(value) {
             done = true;
         }
     }
-    if (prime === true) {
+    if (mersenne === true) {
         addtolist(value);
         if (primes.indexOf(Math.log2(df + 1)) != -1) {
             mersenne = true;
