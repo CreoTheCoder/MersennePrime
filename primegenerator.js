@@ -46,6 +46,7 @@ function checkprime(value) {
         if (value / Number(primes[df]) % 1 != 0) {
             if (primes.indexOf(Math.log2(df + 1)) != -1) {
                 mersenne = true;
+                alert("hello")
             }
             prime = true;
             done = false;
