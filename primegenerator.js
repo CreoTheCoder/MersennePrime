@@ -9,6 +9,7 @@ if (localStorage.primes == undefined) {
     var num = 3;
     var primecount = 0;
     var primes = ["filler"];
+    addtolist(2);
     addtolist(3);
 }
 else {
@@ -39,17 +40,14 @@ function checkprime(value) {
     var testNumSqurt = Math.sqrt(value);
     var done = false;
     var prime = false;
-    var mersenne = false;
     var df = 1;
     for (df = 1; done === false && Number(primes[df]) < value; df = df + 1) {
+
         //if evenly divisible
         if (value / Number(primes[df]) % 1 != 0) {
-            if (primes.indexOf(Math.log2(df + 1)) != -1) {
-                mersenne = true;
-                alert("hello")
-            }
             prime = true;
             done = false;
+            
         }
         //if not evenly divisible
         else {
@@ -57,7 +55,7 @@ function checkprime(value) {
             done = true;
         }
     }
-    if (mersenne === true) {
+    if (prime === true) {
         addtolist(value);
     }
 }
